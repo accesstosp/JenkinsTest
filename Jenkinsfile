@@ -1,10 +1,10 @@
-Jenkinsfile (Declarative Pipeline) 
+Jenkinsfile (Declarative Pipeline)
 pipeline {
-    agent any
+    agent { docker { image 'maven:3.3.3' } }
     stages {
-        stage('Build') {
+        stage('build') {
             steps {
-                bat 'set'
+                sh 'mvn --version'
             }
         }
     }
